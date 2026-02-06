@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task 4 — HTML Forms</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="container">
+
+    <header class="header">
+      <h1>Task 4: HTML Forms</h1>
+      <p class="muted">
+        Develop a basic contact form with proper validation and user input handling.
+      </p>
+    </header>
+
+    <!-- CONTACT FORM ONLY -->
+    <section class="card">
+
+      <h2>Contact Form</h2>
+
+      <form id="contactForm" novalidate>
+
+        <div class="grid">
+
+          <div class="field">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required minlength="2">
+            <small class="error" data-for="name"></small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+            <small class="error" data-for="email"></small>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+            <small class="error" data-for="phone"></small>
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select</option>
+              <option>General Enquiry</option>
+              <option>Support</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+            <small class="error" data-for="subject"></small>
+          </div>
+
+        </div>
+
+        <fieldset>
+          <legend>Preferred Contact Method *</legend>
+
+          <label>
+            <input type="radio" name="contactMethod" value="Email" required>
+            Email
+          </label>
+
+          <label>
+            <input type="radio" name="contactMethod" value="Phone">
+            Phone
+          </label>
+
+          <label>
+            <input type="radio" name="contactMethod" value="WhatsApp">
+            WhatsApp
+          </label>
+
+          <small class="error" data-for="contactMethod"></small>
+        </fieldset>
+
+
+        <fieldset>
+          <legend>Services Needed *</legend>
+
+          <label>
+            <input type="checkbox" name="services" value="Windows">
+            Windows Installation
+          </label>
+
+          <label>
+            <input type="checkbox" name="services" value="Office">
+            MS Office Setup
+          </label>
+
+          <label>
+            <input type="checkbox" name="services" value="Repair">
+            Laptop Repair
+          </label>
+
+          <label>
+            <input type="checkbox" name="services" value="Network">
+            Network Setup
+          </label>
+
+          <small class="error" data-for="services"></small>
+        </fieldset>
+
+
+        <div class="field">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="4" required minlength="10"></textarea>
+          <small class="error" data-for="message"></small>
+        </div>
+
+
+        <label class="consent">
+          <input type="checkbox" id="consent" required>
+          I agree to be contacted.
+        </label>
+
+        <small class="error" data-for="consent"></small>
+
+
+        <div class="actions">
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+
+        <div id="toast"></div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
